@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+      <meta name="referrer" content="no-referrer">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,
+      viewport-fit=cover,
+      user-scalable=no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+      <!-- 使用 CDN 的 CSS 文件 -->
+      <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet">
+      <% } %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+  <!-- 使用 CDN 的 JS 文件 -->
+  <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+  <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+  <% } %>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
